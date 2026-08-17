@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: var(--max-opacity, 1);
+  }
+  50% {
+    opacity: var(--min-opacity, 0.2);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--drift-distance, 12px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none !important;
+  }
+}
